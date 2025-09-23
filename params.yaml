@@ -1,0 +1,14 @@
+DATA_DIR: "artifacts/data"
+CHROMA_DIR: "artifacts/chroma"
+CHROMA_COLLECTION: "rag_docs"
+
+EMBEDDING_MODEL: "sentence-transformers/all-MiniLM-L6-v2"
+LLM_MODEL: "gemma3:270m"
+TEMPERATURE: 0.1
+TIMEOUT: 200
+
+CHUNK_SIZE: 512
+CHUNK_OVERLAP: 50
+TOP_K: 5
+
+QUERY: "How is attention different from CNN or RNN?"
