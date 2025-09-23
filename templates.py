@@ -18,6 +18,7 @@ list_of_files = [
     "utils/__init__.py",
     "utils/config.py",
     "utils/logger.py",
+    "utils/server.py",
     "utils/common.py",
     
     "utils/rag/__init__.py",

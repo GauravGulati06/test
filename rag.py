@@ -14,7 +14,14 @@ from utils.config import CONFIG
 from utils.rag.get_models import get_embedding_model, get_llm_model
 from utils.rag.get_prompt import RESPONSE_SYNTHESIS_PROMPT
 
+import phoenix as px
+from openinference.instrumentation.llama_index import LlamaIndexInstrumentor
+from opentelemetry.exporter.otlp.proto.http.trace_exporter import OTLPSpanExporter
+from opentelemetry.sdk import trace as trace_sdk
+from opentelemetry.sdk.trace.export import SimpleSpanProcessor
 
+
+# configs
 DATA_DIR = Path(CONFIG["DATA_DIR"])
 CHROMA_DIR = Path(CONFIG["CHROMA_DIR"])
 CHROMA_COLLECTION = CONFIG["CHROMA_COLLECTION"]
@@ -27,6 +34,12 @@ CHUNK_OVERLAP = CONFIG["CHUNK_OVERLAP"]
 TOP_K = CONFIG["TOP_K"]
 
 QUERY = CONFIG["QUERY"]
+
+# tracing
+endpoint = "http://localhost:6006/v1/traces"
+tracer_provider = trace_sdk.TracerProvider()
+tracer_provider.add_span_processor(SimpleSpanProcessor(OTLPSpanExporter(endpoint)))
+LlamaIndexInstrumentor().instrument(tracer_provider=tracer_provider)
 
 
 def build_rag():
