@@ -1,6 +1,6 @@
 DATA_DIR: "artifacts/data"
 CHROMA_DIR: "artifacts/chroma"
-CHROMA_COLLECTION: "rag_docs"
+CHROMA_COLLECTION: "pdfs"
 
 EMBEDDING_MODEL: "sentence-transformers/all-MiniLM-L6-v2"
 LLM_MODEL: "gemma3:270m"

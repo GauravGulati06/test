@@ -13,6 +13,7 @@ RESPONSE_SYNTHESIS_PROMPT = PromptTemplate(
     Given the context information and not prior knowledge, answer the question as best you can.
     Question: {query_str}
     
-    Answer in 2-3 sentences only.
+    Answer in 2-3 sentences only. And do not return an empty response. 
+    If you cannot find the answer in the retrieved documents, just return "I don't know".
     """
     )
