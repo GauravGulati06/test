@@ -7,6 +7,24 @@ resolution-markers = [
 ]
 
 [[package]]
+name = "accelerate"
+version = "1.10.1"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "huggingface-hub" },
+    { name = "numpy" },
+    { name = "packaging" },
+    { name = "psutil" },
+    { name = "pyyaml" },
+    { name = "safetensors" },
+    { name = "torch" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/b1/72/ff3961c19ee395c3d30ac630ee77bfb0e1b46b87edc504d4f83bb4a89705/accelerate-1.10.1.tar.gz", hash = "sha256:3dea89e433420e4bfac0369cae7e36dcd6a56adfcfd38cdda145c6225eab5df8", size = 392446, upload-time = "2025-08-25T13:57:06.21Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/5f/a0/d9ef19f780f319c21ee90ecfef4431cbeeca95bec7f14071785c17b6029b/accelerate-1.10.1-py3-none-any.whl", hash = "sha256:3621cff60b9a27ce798857ece05e2b9f56fcc71631cfb31ccf71f0359c311f11", size = 374909, upload-time = "2025-08-25T13:57:04.55Z" },
+]
+
+[[package]]
 name = "aiohappyeyeballs"
 version = "2.6.1"
 source = { registry = "https://pypi.org/simple" }
@@ -1439,6 +1457,33 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/70/e5/a3628da5d716d6bbc2c0a8d39b629dff81b33d5625c5b934e1456370064f/llama_index_instrumentation-0.4.1.tar.gz", hash = "sha256:a79d0dd2baba34f05ff4354d63a99b212322635b8afa6cc96ed00a7e11ebfdc3", size = 45788, upload-time = "2025-09-15T03:53:00.219Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/3a/7a/c414f4dc9a7dd90d050c387489436bab2d678a566b704ede2f5b62f82ad7/llama_index_instrumentation-0.4.1-py3-none-any.whl", hash = "sha256:0d3ac926d0db3d39c0ec34ee72da5322d61e06b87fe956407e4a1e7a2708b936", size = 15063, upload-time = "2025-09-15T03:52:59.098Z" },
+]
+
+[[package]]
+name = "llama-index-llms-huggingface"
+version = "0.6.1"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "llama-index-core" },
+    { name = "torch" },
+    { name = "transformers", extra = ["torch"] },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/55/2b/f9729c545f8a7b225ff9ef37a50dc7d996f89455af7c206af968fae56eb4/llama_index_llms_huggingface-0.6.1.tar.gz", hash = "sha256:97efa646cffd532eb8c18fb2014ace4c19445a8bfd244912e1e81b8ddaeb8912", size = 7763, upload-time = "2025-09-08T20:29:30.238Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/a6/5b/0f1cac1720e4d91c04bf381fbddeabdc5cfd614df2edfd24ae5b7504828f/llama_index_llms_huggingface-0.6.1-py3-none-any.whl", hash = "sha256:8f922dcbbcd2bbadb5853ae74001a68041f38d7caf3d269765e276e574713d99", size = 7758, upload-time = "2025-09-08T20:29:29.48Z" },
+]
+
+[[package]]
+name = "llama-index-llms-huggingface-api"
+version = "0.6.1"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "huggingface-hub" },
+    { name = "llama-index-core" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/99/7a/161d429ac0a3f4a599035351ff342556b896f072bd431708e394f4f2870f/llama_index_llms_huggingface_api-0.6.1.tar.gz", hash = "sha256:e29bcdde6c1ed845c43e8c60598033e7fda227c20fbedf7f549ab8d690ee54b5", size = 7729, upload-time = "2025-09-08T20:49:11.708Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/d2/c7/ee54945dd8346daf339744ac5ad1e2643ba33ad1242c9d7d19bb9ea139da/llama_index_llms_huggingface_api-0.6.1-py3-none-any.whl", hash = "sha256:f4e31682b53709550ad5331c00f49774e054cfc240264416cd5a7c5d211def93", size = 7488, upload-time = "2025-09-08T20:49:11.007Z" },
 ]
 
 [[package]]
@@ -3285,6 +3330,8 @@ dependencies = [
     { name = "llama-index" },
     { name = "llama-index-callbacks-arize-phoenix" },
     { name = "llama-index-embeddings-huggingface" },
+    { name = "llama-index-llms-huggingface" },
+    { name = "llama-index-llms-huggingface-api" },
     { name = "llama-index-llms-ollama" },
     { name = "llama-index-vector-stores-chroma" },
     { name = "matplotlib" },
@@ -3293,6 +3340,7 @@ dependencies = [
     { name = "opentelemetry-proto" },
     { name = "opentelemetry-sdk" },
     { name = "pytest" },
+    { name = "python-dotenv" },
     { name = "pyyaml" },
     { name = "seaborn" },
 ]
@@ -3304,6 +3352,8 @@ requires-dist = [
     { name = "llama-index", specifier = ">=0.14.2" },
     { name = "llama-index-callbacks-arize-phoenix", specifier = ">=0.6.1" },
     { name = "llama-index-embeddings-huggingface", specifier = ">=0.6.1" },
+    { name = "llama-index-llms-huggingface", specifier = ">=0.3.1" },
+    { name = "llama-index-llms-huggingface-api", specifier = ">=0.2.0" },
     { name = "llama-index-llms-ollama", specifier = ">=0.7.3" },
     { name = "llama-index-vector-stores-chroma", specifier = ">=0.5.3" },
     { name = "matplotlib", specifier = ">=3.10.6" },
@@ -3312,6 +3362,7 @@ requires-dist = [
     { name = "opentelemetry-proto", specifier = ">=1.37.0" },
     { name = "opentelemetry-sdk", specifier = ">=1.37.0" },
     { name = "pytest", specifier = ">=8.4.2" },
+    { name = "python-dotenv", specifier = ">=1.0.1" },
     { name = "pyyaml", specifier = ">=6.0.2" },
     { name = "seaborn", specifier = ">=0.13.2" },
 ]
@@ -3438,6 +3489,12 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/e5/82/0bcfddd134cdf53440becb5e738257cc3cf34cf229d63b57bfd288e6579f/transformers-4.56.2.tar.gz", hash = "sha256:5e7c623e2d7494105c726dd10f6f90c2c99a55ebe86eef7233765abd0cb1c529", size = 9844296, upload-time = "2025-09-19T15:16:26.778Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/70/26/2591b48412bde75e33bfd292034103ffe41743cacd03120e3242516cd143/transformers-4.56.2-py3-none-any.whl", hash = "sha256:79c03d0e85b26cb573c109ff9eafa96f3c8d4febfd8a0774e8bba32702dd6dde", size = 11608055, upload-time = "2025-09-19T15:16:23.736Z" },
+]
+
+[package.optional-dependencies]
+torch = [
+    { name = "accelerate" },
+    { name = "torch" },
 ]
 
 [[package]]
